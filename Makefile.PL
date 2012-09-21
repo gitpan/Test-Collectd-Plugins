@@ -24,6 +24,7 @@ auto_install;
 
 # generate the Parser
 (my $yappbin = $^X ) =~ s!perl([\d\.]*)$!yapp!;
+$yappbin = "yapp" unless -x $yappbin;
 postamble(qq!
 CONFIG_PARSER_DIRNAME = blib/lib/Test/Collectd/Config
 CONFIG_PARSER_FILENAME = \$(CONFIG_PARSER_DIRNAME)/Parse.pm
